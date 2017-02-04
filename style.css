@@ -1,0 +1,28 @@
+body {
+   margin: auto;
+   width: 50%;
+   padding: 10px;
+}
+
+.board {
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  margin: 5px;
+}
+
+.piece {
+  width: 100px;
+  height: 100px;
+  margin: 2px;
+  text-align: center;
+  background-color: purple;
+  font-weight: bold;
+  font-size: x-large;
+  padding: 0px;
+  color: white;
+}
+
+.empty {
+  background-color: white;
+}
