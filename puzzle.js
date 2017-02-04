@@ -39,6 +39,20 @@ function clickPiece(n) {
     let clickedDivide = Math.floor(clicked/4);
     let clickedRemain = clicked % 4;
 
+
+    // console.log("clicked")
+    // console.log(clicked)
+    // console.log("empty")
+    // console.log(emptyPiece)
+    // console.log("emptyDivide")
+    // console.log(emptyDivide)
+    // console.log("emptyRemain")
+    // console.log(emptyRemain)
+    // console.log("clickedDivide")
+    // console.log(clickedDivide)
+    // console.log("clickedRemain")
+    // console.log(clickedRemain)
+
     if((Math.abs(emptyDivide - clickedDivide) == 1 && emptyRemain == clickedRemain) ||
      (Math.abs(emptyRemain - clickedRemain) == 1 && emptyDivide == clickedDivide)) {
        document.getElementById(emptyPiece).className = "piece";
@@ -50,9 +64,24 @@ function clickPiece(n) {
        emptyPiece = clicked;
      }
      else if (emptyRemain == clickedRemain) {
-      //  vertical line
-      
+       //  vertical line
+       if(Math.abs(emptyDivide - clickedDivide) == 2) {
+        //  two vertical spaces from empty space
+       } else if (Math.abs(emptyDivide - clickedDivide) == 3) {
+        //  three vertical spaces from empty space
+       }
      }
+     else if (emptyDivide == clickedDivide) {
+      // horizontal line
+      if(Math.abs(emptyRemain - clickedRemain) == 2) {
+        //  two horizontal spaces from empty space
+        console.log("equals two")
 
+      }
+      else if (Math.abs(emptyRemain - clickedRemain) == 3) {
+        // three horizontal spaces from empty space
+        console.log("equals three")
+      }
+     }
   }
 }
