@@ -54,7 +54,8 @@ function clickPiece(n) {
        //  vertical line
        if(Math.abs(emptyDivide - clickedDivide) == 2) {
         //  two vertical spaces from empty space
-        if(emptyDivide == 0) {
+        console.log(emptyDivide)
+        if(emptyDivide == 0 || emptyDivide == 2) {
           // empty space is on top
           let firstSpace = document.getElementById(emptyPiece);
           let secondSpace = document.getElementById(emptyPiece + 4);
@@ -65,7 +66,7 @@ function clickPiece(n) {
           n.innerHTML = "";
           emptyPiece = clicked;
         }
-        else if (emptyDivide == 3) {
+        else if (emptyDivide == 3 || emptyDivide == 1) {
           // empty space is on bottom
            let firstSpace = document.getElementById(emptyPiece);
            let secondSpace = document.getElementById(emptyPiece - 4);
@@ -110,10 +111,59 @@ function clickPiece(n) {
       // horizontal line
       if(Math.abs(emptyRemain - clickedRemain) == 2) {
         //  two horizontal spaces from empty space
+        if(emptyRemain == 0 || emptyRemain == 1) {
+          // empty space is on the left
+          let firstSpace = document.getElementById(emptyPiece);
+          let secondSpace = document.getElementById(emptyPiece + 1);
+          firstSpace.className = "piece";
+          firstSpace.innerHTML = secondSpace.innerHTML;
+          secondSpace.innerHTML = n.innerHTML;
+          n.className = "empty";
+          n.innerHTML = "";
+          emptyPiece = clicked;
+        }
+        else if (emptyRemain == 3 || emptyRemain == 2) {
+          // empty space is on the right
+          let firstSpace = document.getElementById(emptyPiece);
+          let secondSpace = document.getElementById(emptyPiece - 1);
+          firstSpace.className = "piece";
+          firstSpace.innerHTML = secondSpace.innerHTML;
+          secondSpace.innerHTML = n.innerHTML;
+          n.className = "empty";
+          n.innerHTML = "";
+          emptyPiece = clicked;
+        }
       }
       else if (Math.abs(emptyRemain - clickedRemain) == 3) {
         // three horizontal spaces from empty space
+        if(emptyRemain == 0){
+          // empty space is on the left
+          let firstSpace = document.getElementById(emptyPiece);
+          let secondSpace = document.getElementById(emptyPiece + 1);
+          let thirdSpace = document.getElementById(emptyPiece + 2);
+          firstSpace.className = "piece";
+          firstSpace.innerHTML = secondSpace.innerHTML;
+          secondSpace.innerHTML = thirdSpace.innerHTML;
+          thirdSpace.innerHTML = n.innerHTML;
+          n.className = "empty";
+          n.innerHTML = "";
+          emptyPiece = clicked;
+        }
+
+      else if (emptyRemain == 3) {
+        // empty space is on the right
+        let firstSpace = document.getElementById(emptyPiece);
+        let secondSpace = document.getElementById(emptyPiece - 1);
+        let thirdSpace = document.getElementById(emptyPiece - 2);
+        firstSpace.className = "piece";
+        firstSpace.innerHTML = secondSpace.innerHTML;
+        secondSpace.innerHTML = thirdSpace.innerHTML;
+        thirdSpace.innerHTML = n.innerHTML;
+        n.className = "empty";
+        n.innerHTML = "";
+        emptyPiece = clicked;
       }
-     }
+    }
+   }
   }
 }
