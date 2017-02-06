@@ -3,12 +3,8 @@ window.addEventListener('load', puzzle, false);
 const pieces = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 let emptyPiece;
 
-// arrange board
 function puzzle() {
-  for(let i=0; i < 16; i++){
-    let temp = document.getElementById(i);
-    if(temp) {temp.className = "piece";}
-  }
+  // arrange board
 
   let rando = pieces.sort(
     function(){
@@ -110,8 +106,6 @@ function clickPiece(n) {
           thirdSpace = document.getElementById(emptyPiece - 2);
         }
      }
-
-
        if(thirdSpace !== null){
          firstSpace.className = "piece";
          firstSpace.innerHTML = secondSpace.innerHTML;
@@ -129,6 +123,6 @@ function clickPiece(n) {
          n.innerHTML = "";
          emptyPiece = clicked;
        }
-    }
+     }
    }
 }
