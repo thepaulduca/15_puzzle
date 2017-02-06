@@ -6,8 +6,9 @@ body {
 
 .board {
   border-style: solid;
-  border-color: black;
+  border-color: #00FFFF;
   border-width: 5px;
+  background-color: #00FFFF;
   margin: 5px;
 }
 
@@ -18,8 +19,10 @@ body {
   background-color: purple;
   font-weight: bold;
   font-size: x-large;
-  padding: 0px;
   color: white;
+  border-width: 2px;
+  border-color: purple;
+  border-radius: 3px;
 }
 
 .empty {

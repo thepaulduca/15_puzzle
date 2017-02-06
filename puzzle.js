@@ -2,11 +2,9 @@ window.addEventListener('load', puzzle, false);
 
 const pieces = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 let emptyPiece;
-let complete = false
 
+// arrange board
 function puzzle() {
-  complete = false;
-
   for(let i=0; i < 16; i++){
     let temp = document.getElementById(i);
     if(temp) {temp.className = "piece";}
