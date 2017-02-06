@@ -47,32 +47,29 @@ function clickPiece(n) {
        emptyPiece = clicked;
      }
      else if (emptyRemain == clickedRemain || emptyDivide == clickedDivide) {
+       firstSpace = document.getElementById(emptyPiece);
        //  vertical line
        if(Math.abs(emptyDivide - clickedDivide) == 2) {
         //  two vertical spaces from empty space
         if(emptyDivide == 0 || emptyDivide == 1) {
           // empty space is on top
-          firstSpace = document.getElementById(emptyPiece);
           secondSpace = document.getElementById(emptyPiece + 4);
 
         }
         else if (emptyDivide == 3 || emptyDivide == 2) {
           // empty space is on bottom
-           firstSpace = document.getElementById(emptyPiece);
            secondSpace = document.getElementById(emptyPiece - 4);
         }
        } else if (Math.abs(emptyDivide - clickedDivide) == 3) {
         //  three vertical spaces from empty space
         if(emptyDivide == 0) {
           // empty space is on top
-          firstSpace = document.getElementById(emptyPiece);
           secondSpace = document.getElementById(emptyPiece + 4);
           thirdSpace = document.getElementById(emptyPiece + 8);
 
         }
         else if (emptyDivide == 3) {
           // empty space is on bottom
-          firstSpace = document.getElementById(emptyPiece);
           secondSpace = document.getElementById(emptyPiece - 4);
           thirdSpace = document.getElementById(emptyPiece - 8);
         }
@@ -82,12 +79,10 @@ function clickPiece(n) {
         //  two horizontal spaces from empty space
         if(emptyRemain == 0 || emptyRemain == 1) {
           // empty space is on the left
-          firstSpace = document.getElementById(emptyPiece);
           secondSpace = document.getElementById(emptyPiece + 1);
         }
         else if (emptyRemain == 3 || emptyRemain == 2) {
           // empty space is on the right
-          firstSpace = document.getElementById(emptyPiece);
           secondSpace = document.getElementById(emptyPiece - 1);
         }
       }
@@ -95,13 +90,11 @@ function clickPiece(n) {
         // three horizontal spaces from empty space
         if(emptyRemain == 0){
           // empty space is on the left
-          firstSpace = document.getElementById(emptyPiece);
           secondSpace = document.getElementById(emptyPiece + 1);
           thirdSpace = document.getElementById(emptyPiece + 2);
         }
         else if (emptyRemain == 3) {
           // empty space is on the right
-          firstSpace = document.getElementById(emptyPiece);
           secondSpace = document.getElementById(emptyPiece - 1);
           thirdSpace = document.getElementById(emptyPiece - 2);
         }
